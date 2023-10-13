@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <nav class="p-4 text-white bg-gray-800">
+        <div class="container flex items-center justify-between mx-auto">
+            <a href="/" class="text-2xl font-bold">Lego Collection</a>
+            <div class="flex space-x-4">
+                <a href="/about">About</a>
+                <div class="relative inline-block group">
+                    <span>Theme</span>
+                    <div class="absolute hidden p-2 space-y-2 text-black bg-white group-hover:block">
+                        <a href="/lego/sets?theme=Technic">Technic</a>
+                        <a href="/lego/sets?theme=Classic Town">Classic Town</a>
+                        <a href="/lego/sets?theme=Supplemental">Supplemental</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-8">
+        <div class="text-center hero">
+            <h1 class="mb-4 text-4xl font-bold">Explore our Lego Collection</h1>
+            <a href="/lego/sets" class="mt-20 btn">View Lego Sets</a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 mt-10">
+            <div class="card">
+                <img src="https://cdn.rebrickable.com/media/sets/001-1.jpg" alt="Lego Set" />
+                <h2 class="text-xl font-bold">Gears</h2>
+                <p>
+                    This set was released in America (USA/CAN) by Samsonite in 1965. It was re-released in 1969 as an educational set (322-4). It was never released in Europe.
+                </p>
+                <a href="/lego/sets/001-1" class="btn">View Details</a>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.rebrickable.com/media/sets/028-1.jpg" alt="Lego Set" />
+                <h2 class="text-xl font-bold">Town Mini-Figures</h2>
+                <p>
+                    There are 6 parts in this inventory, with 7 total quantity. The approximate cost of these parts is CA$0.32
+                </p>
+                <a href="/lego/sets/028-1" class="btn">View Details</a>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.rebrickable.com/media/sets/0016-1.jpg" alt="Lego Set" />
+                <h2 class="text-xl font-bold">Castle Mini Figures</h2>
+                <p>
+                    There are 1 parts in this inventory, with 3 total quantity. The approximate cost of these parts is CA$23.23
+                </p>
+                <a href="/lego/sets/0016-1" class="btn">View Details</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
