@@ -12,7 +12,7 @@
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./public/**/*.html", "./view/**/*.html"],
+    content: [`./views/**/*.ejs`],
     darkMode: "media",
     theme: {
         extend: {

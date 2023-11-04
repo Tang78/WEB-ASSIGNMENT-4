@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= set.name %> - Lego Set Details</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <% include('partials/navbar', { page: '/setDetails' }) %>
+
+        <div class="container mx-auto mt-8">
+            <div class="text-center hero">
+                <h1 class="mb-4 text-4xl font-bold">
+                    <%= set.name %>
+                </h1>
+                <p class="mt-10">
+                    Below, you will find detailed information about the set:
+                    <%= set.name
+          %>
+                </p>
+            </div>
+
+            <!-- Row for Image and Details -->
+            <div class="flex flex-wrap md:flex-nowrap mt-8">
+                <!-- Image Column -->
+                <div class="flex-none md:w-auto">
+                    <img src="<%= set.img_url %>" alt="Image of <%= set.name %>" class="w-full md:w-[700px] md:h-[500px] object-scale-down" />
+                </div>
+
+                <!-- Details Column -->
+                <div class="flex-grow ml-2">
+                    <h2 class="text-2xl font-bold mb-2">Set Details</h2>
+                    <p>
+                        <strong>Name:</strong>
+                        <%= set.name %>
+                    </p>
+                    <p>
+                        <strong>Year:</strong>
+                        <%= set.year %>
+                    </p>
+                    <p>
+                        <strong>Theme:</strong>
+                        <%= set.theme %>
+                    </p>
+                    <p>
+                        <strong>Number of Parts:</strong>
+                        <%= set.num_parts %>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quote Section -->
+            <div class="mt-8">
+                <h2 class="text-2xl font-bold">Quote of the Day:</h2>
+                <div id="quote" class="italic">Loading quote...</div>
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-8">
+                <a href="#" onclick="history.back(); return false;" class="btn">Back</a>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                fetch("https://quotable.io/random")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const quoteElement = document.getElementById("quote");
+                        quoteElement.innerHTML = `"${data.content}" - ${data.author}`;
+                    })
+                    .catch((error) => {
+                        console.error("Error fetching quote:", error);
+                        const quoteElement = document.getElementById("quote");
+                        quoteElement.innerHTML =
+                            "An error occurred while fetching the quote.";
+                    });
+            });
+        </script>
+</body>
+
+</html>
